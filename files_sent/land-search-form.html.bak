@@ -1,0 +1,1017 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Land Search Form</title>
+        <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="https://www.americandiscountcruises.com/styles/master2012.css" />
+        <link rel="stylesheet" type="text/css" href="styles/resorts.css" />
+        <link rel="stylesheet" type="text/css" href="https://www.americandiscountcruises.com/styles/res-engine.css" />
+        <script type="text/javascript" src="https://www.americandiscountcruises.com/Scripts/jquery-effects.js"></script>
+        <script type="text/javascript" src="https://www.americandiscountcruises.com/Scripts/jquery-ui-effects.js"></script>
+        <script src="scripts/jquery-effects-ros.js" type="text/javascript"></script>
+        <script src="https://www.americandiscountcruises.com/SpryAssets/SpryURLUtils.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://www.americandiscountcruises.com/Scripts/resort-video-display.js"></script>
+        <link type="text/css" href="https://www.americandiscountcruises.com/styles/cupertino/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://www.americandiscountcruises.com/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript">
+
+            var qsParm = new Array();
+
+            function qs() {
+                var query = window.location.search.substring(1);
+                var parms = query.split('&');
+                for (var i = 0; i < parms.length; i++) {
+                    var pos = parms[i].indexOf('=');
+                    if (pos > 0) {
+                        var key = parms[i].substring(0, pos);
+                        var val = parms[i].substring(pos + 1);
+                        qsParm[key] = val;
+                    }
+                }
+            }
+
+            function variableAssignment() {
+                qs();
+                var selTo = qsParm['selTo'];
+                var hotelList = qsParm['hotelList'];
+
+                document.getElementById('selTo').value = selTo;
+                document.getElementById('hotelList').value = hotelList;
+            }
+
+            function onload_funcs() {
+                variableAssignment();
+                $("#NoRooms").change();
+                var subtitle_elem = window.parent.document.getElementsByClassName('landSearchformTitle');
+                $(subtitle_elem).show();
+            }
+
+            function displayID(myID) {
+                $("#" + myID).show();
+            }
+
+            function hideID(myID) {
+                $("#" + myID).hide();
+            }
+
+            function showID(myID) {
+                $("#" + myID).toggle();
+            }
+
+
+            function submitView() {
+                alert("submit functions triggered");
+                hideID('landSearchForm');
+                displayID('my_iframe');
+                var subtitle_elem = window.parent.document.getElementsByClassName('landSearchformTitle');
+                console.log(subtitle_elem);
+                $(subtitle_elem).hide();
+                window.parent.parent.$.fancybox.update();
+            }
+
+
+
+        </script>
+        <style type="text/css">
+            .filterTitle {
+                padding-bottom: 10px;
+            }
+            .searchFormSubmitButton {
+                background-color: #FF3048;
+                border-radius: 5px;
+                color: #FFFFFF;
+                font-size: 13px;
+                font-weight: bold;
+                padding: 6px 7px;
+                border: none;
+            }
+            input[type="submit"]:hover {
+                background-color: #c0142b;
+            }
+            #landSearchForm{
+                font-size:12px; display:block;
+            }
+
+            #child_ages_Room1, #child_ages_Room2{
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body onload="onload_funcs()" style="background-color:#F9F9F9; background-image:none;">
+        <div id="SSL" class="resortListPricingBox2" style="display:block; font-size:12px; color:#444444; text-shadow:none; text-align:left; background-color:#F9F9F9; height:100%;;">
+            <iframe name="my_iframe" src="" id="my_iframe" style="display:none; border:none; height:100%; width: 100%;"></iframe>
+            <form name="myForm" action="http://crusader.travimp.com/TIDirect/TIDirectFrontServlet?request_type=waitsearch" method="post" target="my_iframe" id="landSearchForm"> 
+                <input type="hidden" value="search" name="source" />
+                <input type="hidden" value="00332544" name="agencycode" />
+                <input type="hidden" value="" name="selTo" id="selTo" />
+                <input type="hidden" value="" name="hotelList" id="hotelList" />
+                <input type="hidden" value="Y" name="hr_button" />
+                <p class="filterTitle">
+                    <label>Trip Type:</label>
+                    <select id="option" name="option">
+                        <option value="VC" selected="selected" >Flight and Hotel</option>
+                        <option value="LO" >Hotel Only</option>
+                    </select>
+                </p>
+                <p class="filterTitle">
+                    <label>From: </label>
+                    <select id="selFrom" name="selFrom">
+                        <option value="0" selected="selected">- Select a Departure City -</option>
+                        <option value="ABR">Aberdeen, Sd</option>
+                        <option value="ABI">Abilene, Tx</option>
+                        <option value="CAK">Akron/ Canton, Oh</option>
+                        <option value="ALM">Alamogordo, Mn</option>
+                        <option value="ALS">Alamosa, Co</option>
+                        <option value="ABY">Albany, Ga</option>
+                        <option value="ALB">Albany, Ny</option>
+                        <option value="ABQ">Albuquerque, Nm</option>
+                        <option value="AEX">Alexandria, La</option>
+                        <option value="ABE">Allentown, Pa</option>
+                        <option value="AIA">Alliance, Ne</option>
+                        <option value="APN">Alpena, Mi</option>
+                        <option value="AOO">Altoona, Pa</option>
+                        <option value="AMA">Amarillo, Tx</option>
+                        <option value="ABL">Ambler, Ak</option>
+                        <option value="SNA">Anaheim/ Orange County, Ca</option>
+                        <option value="ANC">Anchorage, Ak</option>
+                        <option value="ANI">Aniak, Ak</option>
+                        <option value="ATW">Appleton, Wi</option>
+                        <option value="AVL">Asheville/ Hendersonville, Nc</option>
+                        <option value="ASE">Aspen, Co</option>
+                        <option value="AHN">Athens, Ga</option>
+                        <option value="ATL">Atlanta, Ga</option>
+                        <option value="ACY">Atlantic City, Nj</option>
+                        <option value="AGS">Augusta, Ga</option>
+                        <option value="AUG">Augusta, Me</option>
+                        <option value="AUS">Austin, Tx</option>
+                        <option value="BFL">Bakersfield, Ca</option>
+                        <option value="BWI">Baltimore, Md/ Washington Metro</option>
+                        <option value="BGR">Bangor, Me</option>
+                        <option value="BHB">Bar Harbor, Me</option>
+                        <option value="BRW">Barrow, Ak</option>
+                        <option value="BTR">Baton Rouge, La</option>
+                        <option value="BPT">Beaumont, Tx</option>
+                        <option value="BKW">Beckley, Wv</option>
+                        <option value="BED">Bedford, Ma</option>
+                        <option value="BLI">Bellingham, Wa</option>
+                        <option value="BJI">Bemidji, Mn</option>
+                        <option value="BET">Bethel, Ak</option>
+                        <option value="BIL">Billings, Mt</option>
+                        <option value="BGM">Binghamton, Ny</option>
+                        <option value="BHM">Birmingham, Al</option>
+                        <option value="BIS">Bismarck, Nd</option>
+                        <option value="BMI">Bloomington, Il</option>
+                        <option value="BLF">Bluefield, Wv</option>
+                        <option value="BOI">Boise, Id</option>
+                        <option value="BOS">Boston, Ma</option>
+                        <option value="WBU">Boulder, Co</option>
+                        <option value="BZN">Bozeman, Mt</option>
+                        <option value="BFD">Bradford, Pa</option>
+                        <option value="BRD">Brainerd, Mn</option>
+                        <option value="BKG">Branson, Mo</option>
+                        <option value="BDR">Bridgeport, Ct</option>
+                        <option value="TRI">Bristol/ Kingsport, Tn</option>
+                        <option value="BKX">Brookings, Sd</option>
+                        <option value="BRO">Brownsville, Tx</option>
+                        <option value="BQK">Brunswick, Ga</option>
+                        <option value="BKC">Buckland, Ak</option>
+                        <option value="BUF">Buffalo, Ny</option>
+                        <option value="BUR">Burbank, Ca</option>
+                        <option value="BRL">Burlington, Ia</option>
+                        <option value="BTV">Burlington, Vt</option>
+                        <option value="BTM">Butte, Mt</option>
+                        <option value="CLD">Carlesbad, Ca</option>
+                        <option value="CNM">Carlsbad, Nm</option>
+                        <option value="CPR">Casper, Wy</option>
+                        <option value="CDC">Cedar City, Ut</option>
+                        <option value="CID">Cedar Rapids, Ia</option>
+                        <option value="CWA">Central Wisconsin Airport, Wi</option>
+                        <option value="CMI">Champaign, Il</option>
+                        <option value="CHS">Charleston, Sc</option>
+                        <option value="CRW">Charleston, Wv</option>
+                        <option value="CLT">Charlotte, Nc</option>
+                        <option value="CHO">Charlottesville, Va</option>
+                        <option value="CHA">Chattanooga, Tn</option>
+                        <option value="CYS">Cheyenne, Wy</option>
+                        <option value="CHI">Chicago, Il</option>
+                        <option value="MDW">Chicago, Il/ Midway</option>
+                        <option value="ORD">Chicago, Il/ O'hare</option>
+                        <option value="CIC">Chico, Ca</option>
+                        <option value="CVG">Cincinnati, Oh</option>
+                        <option value="CKB">Clarksburg/ Benedum, Wv</option>
+                        <option value="CLE">Cleveland, Oh</option>
+                        <option value="CVN">Clovis, Nm</option>
+                        <option value="COD">Cody/ Yellowstone, Wy</option>
+                        <option value="CDB">Cold Bay, Ak</option>
+                        <option value="CLL">College Station, Tx</option>
+                        <option value="COS">Colorado Springs, Co</option>
+                        <option value="CAE">Columbia, Sc</option>
+                        <option value="COU">Columbia/ Jefferson City, Mo</option>
+                        <option value="LCK">Columbus Rickenbacker, Oh</option>
+                        <option value="CSG">Columbus, Ga</option>
+                        <option value="GTR">Columbus, Ms</option>
+                        <option value="CMH">Columbus, Oh</option>
+                        <option value="CDV">Cordova, Ak</option>
+                        <option value="CRP">Corpus Chrsti, Tx</option>
+                        <option value="CEZ">Cortez, Co</option>
+                        <option value="CGA">Craig, Ak</option>
+                        <option value="CEC">Crescent City, Ca</option>
+                        <option value="CBE">Cumberland, Md</option>
+                        <option value="DFW">Dallas/ Ft. Worth, Tx</option>
+                        <option value="DAL">Dallas/ Love Field, Tx</option>
+                        <option value="DAY">Dayton, Oh</option>
+                        <option value="DAB">Daytona Beach, Fl</option>
+                        <option value="DEC">Decatur, Il</option>
+                        <option value="DRT">Del Reo, Tx</option>
+                        <option value="DEN">Denver, Co</option>
+                        <option value="DSM">Des Moines, Ia</option>
+                        <option value="DTW">Detroit, Mi</option>
+                        <option value="DVL">Devil's Lake, Nd</option>
+                        <option value="DIK">Dickinson, Nd</option>
+                        <option value="DLG">Dillingham, Ak</option>
+                        <option value="DDC">Dodge City, Ks</option>
+                        <option value="DHN">Dothan, Al</option>
+                        <option value="DUJ">Dubois, Pa</option>
+                        <option value="DBQ">Dubuque, Ia</option>
+                        <option value="DLH">Duluth, Mn</option>
+                        <option value="DRO">Durango, Co</option>
+                        <option value="DUT">Dutch Harbor, Ak</option>
+                        <option value="EAU">Eau Claire, Wi</option>
+                        <option value="ELP">El Paso, Tx</option>
+                        <option value="IPL">Elcentro/ Imperial, Ca</option>
+                        <option value="EKO">Elko, Nv</option>
+                        <option value="EFD">Ellington Field, Tx</option>
+                        <option value="ELM">Elmira, Ny</option>
+                        <option value="EMP">Emporia, Ks</option>
+                        <option value="WDG">Enig, Ok</option>
+                        <option value="ERI">Erie, Pa</option>
+                        <option value="ESC">Escanaba, Mi</option>
+                        <option value="EUG">Eugene, Or</option>
+                        <option value="ACV">Eureka/ Arcata, Ca</option>
+                        <option value="EVV">Evansville, In</option>
+                        <option value="FAI">Fairbanks, Ak</option>
+                        <option value="FAR">Fargo, Nd</option>
+                        <option value="FMN">Farmington, Nm</option>
+                        <option value="FAY">Fayetteville, Nc</option>
+                        <option value="FLG">Flagstaff, Az</option>
+                        <option value="FNT">Flint, Mi</option>
+                        <option value="FLO">Florence, Sc</option>
+                        <option value="FNL">Fort Collins/ Loveland, Co</option>
+                        <option value="FOD">Fort Dodge, Ia</option>
+                        <option value="TBN">Fort Leonard Wood, Mo</option>
+                        <option value="FSM">Fort Smith, Ar</option>
+                        <option value="VPS">Fort Walton Beach, Fl</option>
+                        <option value="FWA">Fort Wayne, In</option>
+                        <option value="FKL">Franklin/ Oil City, Pa</option>
+                        <option value="FAT">Fresno, Ca</option>
+                        <option value="FRD">Friday Harbour, Wa</option>
+                        <option value="RSW">Ft Myers/ Marco/ Naples/ Sanibel Fl</option>
+                        <option value="FLL">Ft. Lauderdale/ Deerfield Beach, Fl</option>
+                        <option value="GNV">Gainesville, Fl</option>
+                        <option value="GUP">Gallup, Nm</option>
+                        <option value="GCK">Garden City, Ks</option>
+                        <option value="GYY">Gary, In</option>
+                        <option value="GCC">Gillette, Wy</option>
+                        <option value="GGW">Glasgow, Mt</option>
+                        <option value="GDV">Glendive, Mt</option>
+                        <option value="GCN">Grand Canyon National Park, Az</option>
+                        <option value="GFK">Grand Forks, Nd</option>
+                        <option value="GRI">Grand Island, Ne</option>
+                        <option value="GJT">Grand Junction, Co</option>
+                        <option value="GRR">Grand Rapids, Mi</option>
+                        <option value="GTF">Great Falls, Mt</option>
+                        <option value="GRB">Green Bay, Wi</option>
+                        <option value="LWB">Greenbrier/ Lewisburg, Wv</option>
+                        <option value="GSO">Greensboro/ Highpoint, Nc</option>
+                        <option value="GLH">Greenville, Ms</option>
+                        <option value="PGV">Greenville, Nc</option>
+                        <option value="GSP">Greenville/ Spartanburg, Sc</option>
+                        <option value="GPT">Gulfport/ Biloxi, Ms</option>
+                        <option value="GUC">Gunnison, Co</option>
+                        <option value="GST">Gustavus, Ak</option>
+                        <option value="HGR">Hagerstown, Md</option>
+                        <option value="SUN">Hailey, Id</option>
+                        <option value="HNS">Haines, Ak</option>
+                        <option value="HNM">Hana, Hi - Island Of Maui</option>
+                        <option value="CMX">Hancock, Mi</option>
+                        <option value="HRL">Harlingen, Tx</option>
+                        <option value="MDT">Harrisburg, Pa</option>
+                        <option value="HRO">Harrison, Ar</option>
+                        <option value="BDL">Hartford/ Springfield, Ct</option>
+                        <option value="HVR">Havre, Mt</option>
+                        <option value="HYS">Hays, Ks</option>
+                        <option value="HLN">Helena, Mt</option>
+                        <option value="HIB">Hibbings, Mn</option>
+                        <option value="HKY">Hickory, Nc</option>
+                        <option value="ITO">Hilo/ Big Island, Hi</option>
+                        <option value="HHH">Hilton Head, Sc</option>
+                        <option value="HOB">Hobbs, Nm</option>
+                        <option value="HYL">Hollis, Ak</option>
+                        <option value="HOM">Homer, Ak</option>
+                        <option value="HNL">Honolulu/ Waikiki/ Oahu, Hi</option>
+                        <option value="HNH">Hoonah, Ak</option>
+                        <option value="HOT">Hot Springs, Ar</option>
+                        <option value="IAH">Houston, Tx/ George Bush</option>
+                        <option value="HOU">Houston, Tx/ Hobby</option>
+                        <option value="HTS">Huntington, Wv</option>
+                        <option value="HSV">Huntsville, Al</option>
+                        <option value="HON">Huron, Sd</option>
+                        <option value="HSL">Huslia, Ak</option>
+                        <option value="HYA">Hyannis, Ma</option>
+                        <option value="IDA">Idaho Falls/ Fanning, Id</option>
+                        <option value="IND">Indianapolis, In</option>
+                        <option value="INL">International Falls, Mn</option>
+                        <option value="IYK">Inyokern, Ca</option>
+                        <option value="IMT">Iron Mountain, Mi</option>
+                        <option value="IWD">Ironwood, Mi</option>
+                        <option value="ISP">Islip/ Macarthur, Ny/ Ny City Metro</option>
+                        <option value="ITH">Ithaca, Ny</option>
+                        <option value="JAN">Jackson, Ms</option>
+                        <option value="JAC">Jackson, Wy</option>
+                        <option value="OAJ">Jacksonville, Nc</option>
+                        <option value="JAX">Jacksonville/ Amelia Island, Fl</option>
+                        <option value="JMS">Jamestown, Nd</option>
+                        <option value="JHW">Jamestown, Ny</option>
+                        <option value="JST">Johnstown, Pa</option>
+                        <option value="JOT">Joliet, Il</option>
+                        <option value="JBR">Jonesboro, Ar</option>
+                        <option value="JLN">Joplin, Mo</option>
+                        <option value="JNU">Juneau, Ak</option>
+                        <option value="KAE">Kake, Ak</option>
+                        <option value="AZO">Kalamazoo, Mi</option>
+                        <option value="LUP">Kalaupapa, Hi Island Of Molokai</option>
+                        <option value="FCA">Kalispell/ Glacier, Mt</option>
+                        <option value="KAL">Kaltag, Ak</option>
+                        <option value="MUE">Kamuela, Hi Island Of Hawaii</option>
+                        <option value="MCI">Kansas City, Mo</option>
+                        <option value="JHM">Kapalua/ Maui, Hi</option>
+                        <option value="LIH">Kauai, Hawaii (lihue)</option>
+                        <option value="EAR">Kearney, Ne</option>
+                        <option value="EEN">Keene, Nh</option>
+                        <option value="ENA">Kenai, Ak</option>
+                        <option value="EYW">Key West, Fl</option>
+                        <option value="GRK">Killeen, Tx</option>
+                        <option value="AKN">King Salmon, Ak</option>
+                        <option value="IGM">Kingman, Az</option>
+                        <option value="ISO">Kinston, Nc</option>
+                        <option value="IRK">Kirksville, Mo</option>
+                        <option value="KVL">Kivalina, Ak</option>
+                        <option value="LMT">Klamath Falls, Or</option>
+                        <option value="TYS">Knoxville Tn</option>
+                        <option value="ADQ">Kodiak, Ak</option>
+                        <option value="KOA">Kona/ Big Island, Hi</option>
+                        <option value="OTZ">Kotzebue, Ak</option>
+                        <option value="KYU">Koyukuk, Ak</option>
+                        <option value="KWT">Kwethluk, Ak</option>
+                        <option value="LSE">La Crosse, Wi</option>
+                        <option value="LAF">Lafayette, In</option>
+                        <option value="LFT">Lafayette, La</option>
+                        <option value="LCH">Lake Charles, La</option>
+                        <option value="HII">Lake Havasu City, Az</option>
+                        <option value="LNY">Lanai, Hi</option>
+                        <option value="LNS">Lancaster, Pa</option>
+                        <option value="LAN">Lansing, Mi</option>
+                        <option value="LAR">Laramie, Wy</option>
+                        <option value="LRD">Laredo, Tx</option>
+                        <option value="LAS">Las Vegas, Nv</option>
+                        <option value="LBE">Latrobe, Pa</option>
+                        <option value="PIB">Laurel Hattiesburg, Ms</option>
+                        <option value="LAW">Lawton, Ok</option>
+                        <option value="LEB">Lebanon, Nh</option>
+                        <option value="KLL">Levelock, Ak</option>
+                        <option value="LWS">Lewiston, Id</option>
+                        <option value="LWT">Lewistown, Mt</option>
+                        <option value="LEX">Lexington, Ky</option>
+                        <option value="LBL">Liberal, Ks</option>
+                        <option value="LNK">Lincoln, Ne</option>
+                        <option value="LIT">Little Rock, Ar</option>
+                        <option value="LGB">Long Beach, Ca</option>
+                        <option value="GGG">Longview/ Gladewater/ Kilgore, Tx</option>
+                        <option value="LPS">Lopez Island, Wa</option>
+                        <option value="LAX">Los Angeles, Ca</option>
+                        <option value="SDF">Louisville, Ky</option>
+                        <option value="LBB">Lubbock, Tx</option>
+                        <option value="LYH">Lynchburg, Va</option>
+                        <option value="MCN">Macon, Ga</option>
+                        <option value="MSN">Madison, Wi</option>
+                        <option value="MMH">Mammoth Lakes Airport, Ca</option>
+                        <option value="MHT">Manchester, Nh</option>
+                        <option value="MHK">Manhattan, Ks</option>
+                        <option value="MBL">Manistee, Mi</option>
+                        <option value="MKT">Mankato, Mn</option>
+                        <option value="MTH">Marathon/ Duck Key, Fl</option>
+                        <option value="MWA">Marion, Il</option>
+                        <option value="MQT">Marquette Sawyer, Mi</option>
+                        <option value="MML">Marshall, Nj</option>
+                        <option value="MVY">Marthas Vineyard, Ma</option>
+                        <option value="MCW">Mason City, Ia</option>
+                        <option value="MSS">Massena/ Richards, Ny</option>
+                        <option value="MTM">Matlakatla, Ak</option>
+                        <option value="OGG">Maui, Hawaii ( Kahului)</option>
+                        <option value="MCK">Mccook,ne</option>
+                        <option value="MFR">Medford, Or</option>
+                        <option value="MLB">Melbourne, Fl</option>
+                        <option value="MEM">Memphis, Tn</option>
+                        <option value="MCE">Merced, Ca</option>
+                        <option value="MEI">Meridian, Ms</option>
+                        <option value="MIA">Miami, Fl</option>
+                        <option value="MAF">Midland/ Odessa, Tx</option>
+                        <option value="MLS">Miles City, Mt</option>
+                        <option value="MKE">Milwaukee, Wi</option>
+                        <option value="MSP">Minneapolis/ St. Paul, Mn</option>
+                        <option value="MOT">Minot, Nd</option>
+                        <option value="MFE">Mission, Tx/ Mcallen</option>
+                        <option value="MSO">Missoula, Mt</option>
+                        <option value="CNY">Moab, Ut</option>
+                        <option value="MOB">Mobile, Al</option>
+                        <option value="MOD">Modesto, Ca</option>
+                        <option value="MLI">Moline, Il</option>
+                        <option value="MKK">Molokai, Hi</option>
+                        <option value="MLU">Monroe, La</option>
+                        <option value="MRY">Monterey, Ca</option>
+                        <option value="MGM">Montgomery, Al</option>
+                        <option value="MTJ">Montrose/ Delta, Co</option>
+                        <option value="MGW">Morgantown, Wv</option>
+                        <option value="MSL">Muscle Shoals, Al</option>
+                        <option value="MKG">Muskegon, Mi</option>
+                        <option value="MYR">Myrtle Beach, Sc</option>
+                        <option value="ACK">Nantucket, Ma</option>
+                        <option value="APF">Naples, Fl</option>
+                        <option value="BNA">Nashville, Tn</option>
+                        <option value="EWN">New Bern, Nc</option>
+                        <option value="HVN">New Haven, Ct</option>
+                        <option value="GON">New London, Ct</option>
+                        <option value="MSY">New Orleans, La</option>
+                        <option value="NYC">New York City, Ny</option>
+                        <option value="LGA">New York City, Ny / La Guardia</option>
+                        <option value="JFK">New York City, Ny/ Jfk</option>
+                        <option value="EWR">Newark, Nj / Ny City Metro</option>
+                        <option value="SWF">Newburgh/ Stewart, Ny</option>
+                        <option value="PHF">Newport News, Va</option>
+                        <option value="ORF">Norfolk, Va</option>
+                        <option value="OTH">North Bend, Or</option>
+                        <option value="LBF">North Platte, Ne</option>
+                        <option value="XNA">Northwest Arkansas Regional Airport</option>
+                        <option value="ECP">Northwest Florida Beach Internation</option>
+                        <option value="OAK">Oakland, Ca/ San Francisco Metro</option>
+                        <option value="OGS">Ogdensburg, Ny</option>
+                        <option value="OKC">Oklahoma City, Ok</option>
+                        <option value="OMA">Omaha, Ne</option>
+                        <option value="ONT">Ontario, Ca</option>
+                        <option value="MCO">Orlando, Fl</option>
+                        <option value="ORL">Orlando, Fl Herndon</option>
+                        <option value="OSH">Oshkosh, Wi</option>
+                        <option value="OWB">Owensboro, Ky</option>
+                        <option value="OXR">Oxnard, Ca</option>
+                        <option value="PAH">Paducah/ Barkley, Ky</option>
+                        <option value="PGA">Page / Lake Powell, Az</option>
+                        <option value="PSP">Palm Springs, Ca</option>
+                        <option value="PMD">Palmdale, Ca</option>
+                        <option value="PFN">Panama City, Fl</option>
+                        <option value="PKB">Parkersburg, Wv</option>
+                        <option value="PSC">Pasco, Wa</option>
+                        <option value="PEC">Pelican, Ak</option>
+                        <option value="PLN">Pellston, Mi</option>
+                        <option value="PDT">Pendleton, Or</option>
+                        <option value="PNS">Pensacola, Fl</option>
+                        <option value="PIA">Peoria, Il</option>
+                        <option value="KPV">Perryville, Ak</option>
+                        <option value="PSG">Petersburg, Ak</option>
+                        <option value="PHL">Philadelphia, Pa</option>
+                        <option value="PHX">Phoenix, Az</option>
+                        <option value="PIR">Pierre, Sd</option>
+                        <option value="PIP">Pilot Point, Ak</option>
+                        <option value="PQS">Pilot Station, Ak</option>
+                        <option value="SOP">Pinehurst, Nc</option>
+                        <option value="PIT">Pittsburgh, Pa</option>
+                        <option value="PTU">Platinum, Ak</option>
+                        <option value="PLB">Plattsburgh Clinton County, Ny</option>
+                        <option value="PBG">Plattsburgh International, Ny</option>
+                        <option value="PIH">Pocatello, Id</option>
+                        <option value="KPB">Point Baker, Ak</option>
+                        <option value="PHO">Point Hope, Ak</option>
+                        <option value="PIZ">Point Lay, Ak</option>
+                        <option value="PNC">Ponca City, Ok</option>
+                        <option value="PTA">Port Alsworth, Ak</option>
+                        <option value="CLM">Port Angeles, Wa</option>
+                        <option value="KPC">Port Clarence, Ak</option>
+                        <option value="PML">Port Moller, Ak</option>
+                        <option value="PWM">Portland, Me</option>
+                        <option value="PDX">Portland, Or</option>
+                        <option value="PSM">Portsmouth, Nh</option>
+                        <option value="PRC">Prescott, Az</option>
+                        <option value="PQI">Presque Isle, Me</option>
+                        <option value="PVD">Providence, Ri</option>
+                        <option value="PVC">Provincetown, Ma</option>
+                        <option value="PUB">Pueblo, Co</option>
+                        <option value="PUW">Pullman, Wa</option>
+                        <option value="UIN">Quincy, Il</option>
+                        <option value="RDU">Raleigh/ Durham, Nc</option>
+                        <option value="RMP">Rampart, Ak</option>
+                        <option value="RAP">Rapid City, Sd</option>
+                        <option value="RDG">Reading, Pa</option>
+                        <option value="RDV">Red Devil, Ak</option>
+                        <option value="RDD">Redding, Ca</option>
+                        <option value="RDM">Redmond, Or</option>
+                        <option value="RNO">Reno, Nv</option>
+                        <option value="RHI">Rhinelander, Wi</option>
+                        <option value="RIC">Richmond, Va</option>
+                        <option value="RIW">Riverton, Wy</option>
+                        <option value="ROA">Roanoke, Va</option>
+                        <option value="RCE">Roche Harbor, Wa</option>
+                        <option value="RST">Rochester, Mn</option>
+                        <option value="ROC">Rochester, Ny</option>
+                        <option value="RKS">Rock Springs, Wy</option>
+                        <option value="RFD">Rockford, Il</option>
+                        <option value="RKD">Rockland, Me</option>
+                        <option value="RWI">Rocky Mount/ Wilson, Nc</option>
+                        <option value="RSJ">Rosario, Wa</option>
+                        <option value="ROW">Roswell, Nm</option>
+                        <option value="RUT">Rutland, Vt</option>
+                        <option value="SMF">Sacramento, Ca</option>
+                        <option value="MBS">Saginaw, Mi</option>
+                        <option value="SLE">Salem, Or</option>
+                        <option value="SLN">Salina, Ks</option>
+                        <option value="SBY">Salisbury/ Ocean City, Md</option>
+                        <option value="SLC">Salt Lake City, Ut</option>
+                        <option value="AZS">Samana, Dominican Republic</option>
+                        <option value="SJT">San Angelo, Tx</option>
+                        <option value="SAT">San Antonio, Tx</option>
+                        <option value="SAN">San Diego, Ca</option>
+                        <option value="SFO">San Francisco, Ca</option>
+                        <option value="SJC">San Jose, Ca</option>
+                        <option value="SJU">San Juan, Puerto Rico</option>
+                        <option value="SBP">San Luis Obispo, Ca</option>
+                        <option value="SFB">Sanford, Fl</option>
+                        <option value="SBA">Santa Barbara, Ca</option>
+                        <option value="SAF">Santa Fe, Nm</option>
+                        <option value="SMX">Santa Maria, Ca</option>
+                        <option value="STS">Santa Rosa, Ca</option>
+                        <option value="SLK">Saranac/ Lake Placid, Ny</option>
+                        <option value="SRQ">Sarasota, Fl</option>
+                        <option value="CIU">Sault Ste Marie, Chippewa County</option>
+                        <option value="SSM">Saulte Ste Marie, Metropolitan Area</option>
+                        <option value="SAV">Savannah, Ga</option>
+                        <option value="BFF">Scottsbluff, Ne</option>
+                        <option value="AVP">Scranton/ Wilkes-barre, Pa</option>
+                        <option value="SEA">Seattle/ Tacoma, Wa</option>
+                        <option value="SHR">Sheridon, Wy</option>
+                        <option value="SOW">Show Low, Az</option>
+                        <option value="SHV">Shreveport, La</option>
+                        <option value="SUX">Sioux City, Ia</option>
+                        <option value="FSD">Sioux Falls, Sd</option>
+                        <option value="SBN">South Bend, In</option>
+                        <option value="GEG">Spokane, Wa</option>
+                        <option value="SPI">Springfield, Il</option>
+                        <option value="SGF">Springfield, Mo</option>
+                        <option value="STX">St. Croix, U. S. V. I.</option>
+                        <option value="SGU">St. George, Ut</option>
+                        <option value="STL">St. Louis, Mo</option>
+                        <option value="KSM">St. Mary's, Ak</option>
+                        <option value="SMK">St. Michael, Ak</option>
+                        <option value="SNP">St. Paul, Ak</option>
+                        <option value="PIE">St. Petersburg, Fl</option>
+                        <option value="STT">St. Thomas, U. S. V. I.</option>
+                        <option value="SCE">State College, Pa</option>
+                        <option value="SHD">Staunton, Va</option>
+                        <option value="HDN">Steamboat Springs/ Hayden, Co</option>
+                        <option value="WBB">Stebbins, Ak</option>
+                        <option value="SUS">Stevens Village, Ak</option>
+                        <option value="SCK">Stockton, Ca</option>
+                        <option value="SYR">Syracuse, Ny</option>
+                        <option value="TKA">Talkeetna, Ak</option>
+                        <option value="TLH">Tallahassee, Fl</option>
+                        <option value="TPA">Tampa, Fl</option>
+                        <option value="TEK">Tatitlek, Ak</option>
+                        <option value="TEX">Telluride, Co</option>
+                        <option value="TEB">Teterboro, Nj</option>
+                        <option value="TXK">Texarkana, Ar</option>
+                        <option value="TVF">Thief River Falls, Mn</option>
+                        <option value="TNC">Tin City, Ak</option>
+                        <option value="TOG">Togiak, Ak</option>
+                        <option value="TKJ">Tok, Ak</option>
+                        <option value="OOK">Toksook, Ak</option>
+                        <option value="TOL">Toledo, Oh</option>
+                        <option value="FOE">Topeka, Ks</option>
+                        <option value="TVC">Traverse City, Mi</option>
+                        <option value="TTN">Trenton, Nj</option>
+                        <option value="TUS">Tucson, Az</option>
+                        <option value="TUL">Tulsa, Ok</option>
+                        <option value="TLT">Tuluksak, Ak</option>
+                        <option value="TUP">Tupelo, Ms</option>
+                        <option value="TCL">Tuscaloosa, Al</option>
+                        <option value="TWF">Twin Falls, Id</option>
+                        <option value="TYR">Tyler, Tx</option>
+                        <option value="UGB">Ugashik Bay/ Pilot Point, Ak</option>
+                        <option value="UNK">Unalakleet, Ak</option>
+                        <option value="UCA">Utica, Ny</option>
+                        <option value="EGE">Vail, Co</option>
+                        <option value="VDZ">Valdez, Nk</option>
+                        <option value="VLD">Valdosta, Ga</option>
+                        <option value="VEE">Venetic, Ak</option>
+                        <option value="VEL">Vernal, Ut</option>
+                        <option value="VRB">Vero Beach, Fl</option>
+                        <option value="VCT">Victoria, Tx</option>
+                        <option value="VIS">Visalia, Ca</option>
+                        <option value="ACT">Waco/ Madison Cooper, Tx</option>
+                        <option value="AIN">Wainwright, Ak</option>
+                        <option value="ALW">Walla Walla, Wa</option>
+                        <option value="WAS">Washington, Dc</option>
+                        <option value="IAD">Washington, Dc/ Dulles</option>
+                        <option value="DCA">Washington, Dc/ Ronald Reagan</option>
+                        <option value="KWF">Waterfall, Ak</option>
+                        <option value="ALO">Waterloo, Ia</option>
+                        <option value="ART">Watertown, Ny</option>
+                        <option value="ATY">Watertown, Sd</option>
+                        <option value="AUW">Wausau, Wi</option>
+                        <option value="EAT">Wenatchee, Wa</option>
+                        <option value="PBI">West Palm Beach/ Boca Raton, Fl</option>
+                        <option value="WYS">West Yellowstone, Mt</option>
+                        <option value="HPN">Westchester, Ny</option>
+                        <option value="WST">Westerly, Ri</option>
+                        <option value="WSX">Westsound, Wa</option>
+                        <option value="WMO">White Mountain, Ak</option>
+                        <option value="SPS">Wichita Falls, Tx</option>
+                        <option value="ICT">Wichita, Ks</option>
+                        <option value="IPT">Williamsport, Pa</option>
+                        <option value="ISN">Williston, Nd</option>
+                        <option value="ILM">Wilmington, Nc</option>
+                        <option value="ORH">Worcester, Ma</option>
+                        <option value="WRL">Worland, Wy</option>
+                        <option value="WRG">Wrangel, Ak</option>
+                        <option value="YKM">Yakima, Wa</option>
+                        <option value="YAK">Yakutat, Ak</option>
+                        <option value="YKN">Yankton, Sd</option>
+                        <option value="YNG">Youngstown, Oh</option>
+                        <option value="YUM">Yuma, Az</option>
+                    </select>
+                </p>
+                <p class="filterTitle">
+                    <label>Departure Date:</label>
+                    <input type="text" id="txtLeave" name="txtLeave" class="dp" />
+                </p>
+                <p class="filterTitle">
+                    <label>Return Date:</label>
+                    <input type="text" id="txtReturn" name="txtReturn" class="dp" />
+                </p>
+
+                <p class="filterTitle">
+                    <label>Number of Rooms:</label>
+                    <select id="NoRooms" name="NoRooms">
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                    </select>
+                </p>
+                <div id="test_rooms">
+
+                </div>
+
+                <div id="airlineOptions" style="display:block; font-size:12px; color:#444444; text-shadow:none; text-align:left; background-color:#f9f9f9;">
+                    <p class="filterTitle">
+                        <label>Airline:</label>
+                        <input type="radio" onclick="hideID('carrierList')" name="carrierSel" checked="checked" value="N" />
+                        <label class="radio">All</label>
+                        <input type="radio" onclick="displayID('carrierList')" name="carrierSel" value="Y" />
+                        <label class="radio">Select Specific Airline</label>
+                        <select id="carrierList" name="carrierList" style="display:none" multiple="multiple">
+                            <option value="A3">Aegean Airlines</option>
+                            <option value="EI">Aer Lingus</option>
+                            <option value="AM">Aeromexico</option>
+                            <option value="AC">Air Canada</option>
+                            <option value="AF">Air France</option>
+                            <option value="JM">Air Jamaica</option>
+                            <option value="NZ">Air New Zealand</option>
+                            <option value="VT">Air Tahiti</option>
+                            <option value="TN">Air Tahiti Nui</option>
+                            <option value="AS">Alaska Airlines</option>
+                            <option value="AZ">Alitalia</option>
+                            <option value="AA">American Airlines</option>
+                            <option value="AX">American Airlines Connection</option>
+                            <option value="OS">Austrian Airlines</option>
+                            <option value="UP">Bahamasair</option>
+                            <option value="BD">Bmi British Midland</option>
+                            <option value="BA">British Airways</option>
+                            <option value="BW">Caribbean Airlines</option>
+                            <option value="8B">Caribbean Star Airlines</option>
+                            <option value="CX">Cathay Pacific Airways</option>
+                            <option value="KX">Cayman Airways</option>
+                            <option value="CO">Continental Airlines</option>
+                            <option value="DL">Delta Air Lines</option>
+                            <option value="LY">El Al Israel Airlines</option>
+                            <option value="EK">Emirates Airlines</option>
+                            <option value="XE">Expressjet</option>
+                            <option value="AY">Finnair</option>
+                            <option value="F9">Frontier Airlines</option>
+                            <option value="HA">Hawaiian Air</option>
+                            <option value="IB">Iberia Airlines</option>
+                            <option value="WP">Island Air</option>
+                            <option value="B6">Jetblue</option>
+                            <option value="KL">Klm Royal Dutch</option>
+                            <option value="LR">Lacsa</option>
+                            <option value="LA">Lan Airlines</option>
+                            <option value="LI">Liat</option>
+                            <option value="LH">Lufthansa</option>
+                            <option value="YV">Mesa Airlines</option>
+                            <option value="MX">Mexicana</option>
+                            <option value="YX">Midwest Express Airlines</option>
+                            <option value="NA">North American Airlines</option>
+                            <option value="NW">Northwest Airlines</option>
+                            <option value="OA">Olympic Airways</option>
+                            <option value="QF">Qantas Airlines</option>
+                            <option value="SK">Scandnavian Airlines</option>
+                            <option value="SA">South African Airways</option>
+                            <option value="NK">Spirit Airlines</option>
+                            <option value="LX">Swiss Air Lines</option>
+                            <option value="JJ">Tam Brazilian Airlines</option>
+                            <option value="TP">Tap Air Portugal</option>
+                            <option value="TK">Turkish Airlines</option>
+                            <option value="UA">United Airlines</option>
+                            <option value="US">Us Airways</option>
+                            <option value="VS">Virgin Atlantic</option>
+                            <option value="WM">Windward Island Airways</option>
+                        </select>
+                    </p>
+                    <p class="filterTitle">
+                        <label>Departure:</label>
+                        <select id="departTimePref" name="departTimePref">
+                            <option value="Any">Anytime</option>
+                            <option value="MOR">Morning</option>
+                            <option value="AFT">Afternoon</option>
+                            <option value="EVE">Evening</option>
+                            <option value="0">12 A.M.</option>
+                            <option value="1">1 A.M.</option>
+                            <option value="2">2 A.M.</option>
+                            <option value="3">3 A.M.</option>
+                            <option value="4">3 A.M.</option>
+                            <option value="5">5 A.M.</option>
+                            <option value="6">6 A.M.</option>
+                            <option value="7">7 A.M.</option>
+                            <option value="8">8 A.M.</option>
+                            <option value="9">9 A.M.</option>
+                            <option value="10">10 A.M.</option>
+                            <option value="11">11 A.M.</option>
+                            <option value="12">12 P.M.</option>
+                            <option value="13">1 P.M.</option>
+                            <option value="14">2 P.M.</option>
+                            <option value="15">3 P.M.</option>
+                            <option value="16">4 P.M.</option>
+                            <option value="17">5 P.M.</option>
+                            <option value="18">6 P.M.</option>
+                            <option value="19">7 P.M.</option>
+                            <option value="20">8 P.M.</option>
+                            <option value="21">9 P.M.</option>
+                            <option value="22">10 P.M.</option>
+                            <option value="23">11 P.M.</option>
+                        </select>
+                    </p>
+                    <p class="filterTitle">
+                        <label>Return:</label>
+                        <select id="retTimePref" name="retTimePref">
+                            <option value="Any">Anytime</option>
+                            <option value="MOR">Morning</option>
+                            <option value="AFT">Afternoon</option>
+                            <option value="EVE">Evening</option>
+                            <option value="0">12 A.M.</option>
+                            <option value="1">1 A.M.</option>
+                            <option value="2">2 A.M.</option>
+                            <option value="3">3 A.M.</option>
+                            <option value="4">3 A.M.</option>
+                            <option value="5">5 A.M.</option>
+                            <option value="6">6 A.M.</option>
+                            <option value="7">7 A.M.</option>
+                            <option value="8">8 A.M.</option>
+                            <option value="9">9 A.M.</option>
+                            <option value="10">10 A.M.</option>
+                            <option value="11">11 A.M.</option>
+                            <option value="12">12 P.M.</option>
+                            <option value="13">1 P.M.</option>
+                            <option value="14">2 P.M.</option>
+                            <option value="15">3 P.M.</option>
+                            <option value="16">4 P.M.</option>
+                            <option value="17">5 P.M.</option>
+                            <option value="18">6 P.M.</option>
+                            <option value="19">7 P.M.</option>
+                            <option value="20">8 P.M.</option>
+                            <option value="21">9 P.M.</option>
+                            <option value="22">10 P.M.</option>
+                            <option value="23">11 P.M.</option>
+                        </select>
+                    </p>
+                    <p class="filterTitle">
+                        <label>Rating:</label>
+                        <input name='hotelRatings' type='radio' value='A' checked="checked"/>
+                        <label class="radio">All</label>
+
+                        <input name='hotelRatings' type='radio' value='4' />
+                        <label class="radio">4 & 5 Star</label>
+
+                        <input name='hotelRatings' type='radio' value='3' />
+                        <label class="radio">3 Star</label>
+
+                    </p>
+                    <p class="filterTitle">
+                        <label>Class:</label>
+                        <input type="radio" id="coach" value="C" name="airtype" checked="checked" />
+                        <label class="radio">Coach</label>
+                        <input type="radio" id="firstClass" value="F" name="airtype" />
+                        <label class="radio">First Class</label>
+                        <input type="radio" id="business" value="B" name="airtype" />
+                        <label class="radio">Business</label> 
+                    </p>
+                    <p class="filterTitle">
+                        <label>Non Stop:</label>
+                        <input type="checkbox" id="nonStop" value="Y" name="nonStop" />
+                    </p>
+                </div>
+                <input name="submit" type="submit" value="Search" class="searchFormSubmitButton"/>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $("#txtLeave").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0,
+                onSelect: function(dateText, inst) {
+                    var myDate = new Date(dateText);
+                    $("#txtReturn").datepicker('option', 'minDate', myDate);
+                }
+            });
+            $("#txtReturn").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: 0
+            });
+
+
+
+
+            $("#option").change(function() {
+                var optVal = $(this).val();
+                switch (optVal) {
+                    case "VC":
+                        displayID('airlineOptions');
+                        break;
+                    case "LO":
+                        hideID('airlineOptions');
+                        break;
+                }
+            });
+
+            function checkMaxGuests(elem) {
+                var total = 0;
+                $(".person_per_room").each(function() {
+                    total += parseInt($(this).val());
+                });
+                var maxGuests = 7;
+                if (total >= maxGuests) {
+                    alert("The number of Passengers exceeds our maxium of " + maxGuests);
+                } else {
+                    var room_num = elem.parents(".filterTitle").find('.room_num').val();
+                    var children_amount = elem.val();
+                    $("#child_ages_" + room_num).empty();
+                    for (var k = 1; k <= children_amount; k++) {
+                        $("#child_ages_" + room_num).append(
+                                '<p class="child_room" class="filterTitle">\n\
+                                    <label>Child ' + k + ' Age:</label>\n\
+                                    <select id="Child' + room_num + 'Age' + k + '" name="Child' + room_num + 'Age' + k + '">\n\
+                                        <option value="NULL" selected="selected">??</option>\n\
+                                        <option value="1">1</option>\n\
+                                        <option value="2">2</option>\n\
+                                        <option value="3">3</option>\n\
+                                        <option value="4">4</option>\n\
+                                        <option value="5">5</option>\n\
+                                        <option value="6">6</option>\n\
+                                        <option value="7">7</option>\n\
+                                        <option value="8">8</option>\n\
+                                        <option value="9">9</option>\n\
+                                        <option value="10">10</option>\n\
+                                        <option value="11">11</option>\n\
+                                        <option value="12">12</option>\n\
+                                        <option value="13">13</option>\n\
+                                        <option value="14">14</option>\n\
+                                        <option value="15">15</option>\n\
+                                        <option value="16">16</option>\n\
+                                        <option value="17">17</option>\n\
+                                        <option value="18">18</option>\n\
+                                        <option value="19">19</option>\n\
+                                        <option value="20">20</option>\n\
+                                        <option value="21">21</option>\n\
+                                    </select>\n\
+                                </p>'
+                                );
+                    }
+                }
+            }
+
+            $("#NoRooms").change(function() {
+                $("#test_rooms").empty();
+                var rooms_num = $(this).val();
+                if (rooms_num !== 0) {
+                    for (var i = 1; i <= rooms_num; i++) {
+                        $("#test_rooms").append('\
+                        <p class="filterTitle"><strong>Room ' + i + '</strong></p>\n\
+                        <p class="filterTitle">\n\
+                            <label>Adults:</label>\n\
+                            <select id="NoAdultsRoom' + i + '" name="NoAdultsRoom' + i + '" class="person_per_room" onchange="checkMaxGuests();">\n\
+                                <option value="1">1</option>\n\
+                                <option value="2" selected="selected">2</option>\n\
+                                <option value="3">3</option>\n\
+                                <option value="4">4</option>\n\
+                                <option value="5">5</option>\n\
+                                <option value="6">6</option>\n\
+                                <option value="7">7</option>\n\
+                            </select>\n\
+                            <label>Children:</label>\n\
+                            <select id="NoChldRm' + i + '" name="NoChldRm' + i + '" class="person_per_room" onchange="checkMaxGuests( $(this) );">\n\
+                                <option value="0" selected="selected">0</option>\n\
+                                <option value="1" >1</option>\n\
+                                <option value="2" >2</option>\n\
+                                <option value="3" >3</option>\n\
+                                <option value="4" >4</option>\n\
+                                <option value="5" >5</option>\n\
+                                <option value="6" >6</option>\n\
+                            </select>\n\
+                            <input type="hidden" class="room_num" value="Room' + i + '" />\n\
+                        </p>\n\
+                        <div id="child_ages_Room' + i + '">\n\
+                        </div>');
+
+                    }
+                }
+            });
+
+
+
+            $("#landSearchForm").submit(function() {
+
+                var inputsArr = $(this).serializeArray();
+                var errors = 0;
+                $.each(inputsArr, function(inputdata, input) {
+
+                    switch (input.name) {
+                        case "selFrom":
+                            if (input.value === "0") {
+                                alert("Please select a  DEPARTURE CITY");
+                                errors++;
+                            }
+                            break;
+                        case "txtLeave":
+                            if (input.value === "") {
+                                alert("Please select a DEPARTURE DATE");
+                                errors++;
+                            }
+                            break;
+                        case "txtReturn":
+                            if (input.value === "") {
+                                alert("Please select a RETURN DATE");
+                                errors++;
+                            }
+                            break;
+                        case "NoRooms":
+                            if (input.value === "0") {
+                                alert("Please select NUMBER OF ROOMS");
+                                errors++;
+                            } else {
+                                for (var k = 1; k <= parseInt(input.value); k++) {
+                                    var adults_room = parseInt($("#NoAdultsRoom" + k).val());
+                                    var children_room = parseInt($("#NoChldRm" + k).val());
+                                    var people_room = adults_room + children_room;
+                                    if (people_room === 0) {
+                                        alert("Please select MORE THAN 0 PEOPLE IN ROOM " + k);
+                                        errors++;
+                                    }
+                                    if (children_room > 0) {
+                                        for (var z = 1; z <= children_room; z++) {
+                                            var child_room_id = "#ChildRoom" + k + "Age" + z;
+                                            var child_room_val = $(child_room_id).val();
+                                            if (child_room_val === "NULL") {
+                                                alert("Please select ENTER CHILD'S AGE FOR ROOM " + k + " CHILD " + z);
+                                                errors++;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                            break;
+                        default :
+                            break;
+
+                    }
+                });
+                if (errors > 0) {
+                    return false;
+                } else {
+                    submitView();
+                }
+
+
+            });
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,649 @@
+@charset "UTF-8";
+/* Styles for the resort pages */
+
+div.resortAwardContainer {
+	margin: 25px 0;
+	position:relative;
+}
+img.awardLogo {
+	float:left;
+	margin-right: 20px;
+}
+div.awardDescription {
+	float:left;
+	color:#666;
+}
+span.awardVendor {
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#333;
+}
+p.awardSub {
+	font-style:italic;
+	color:#666;
+	font-size:14px;
+	font-weight:bold;
+	margin:5px 0 15px 0;
+}
+div.awardDescription ul {
+	margin:10px 0 10px 10px;
+	padding:0;
+	font-style:italic;
+	list-style:none;
+}
+div.awardDescription ul li {
+	margin:5px 0;
+	font-weight:bold;
+}
+div.awardDescription ul li ul li {
+	font-style:normal;
+	font-weight:normal;
+	margin-left:25px;
+	list-style-image:url(../images/demo/bonus-star-step6.png);
+}
+div.awardDescription ul li ul li ul li {
+	list-style:circle;
+}
+div.resortOverviewImg {
+	 float:left;
+	 margin-right:5px;
+}
+div.resortOverviewImg img{
+	border:1px solid #999;
+	padding:2px;
+	float:left;
+}
+div.resortOverviewDesc {
+	float:left;
+	width:345px;
+}
+div.resortOverviewSurround {
+	margin-bottom:15px;
+	float:left;
+}
+p.resortOverviewSub {
+	text-transform:uppercase;
+	font-size:16px;
+	font-weight:bold;
+	color:#056CD3;
+}
+p.overviewSubtitle {
+	margin-top:15px;
+	font-weight:bold;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:20px;
+	color:#033669;
+}
+div.resortOverviewContact {
+	margin:25px 0 15px 0;
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+}
+div.resortPageContact {
+	margin:20px 0 15px 0;
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+}
+div.resortImgIndexSurround {
+	float:left;
+}
+img.resortImgIndex {
+	margin:5px;
+	border:1px solid #999;
+	padding:2px;
+}
+div.resortStatsIndexSurround {
+	float:left;
+	width:317px;
+}
+p.resortListSub {
+	font-size:14px;
+	font-style:italic;
+	margin:10px 0 0 10px;
+}
+p.resortVideosSub {
+	font-size:14px;
+	font-style:italic;
+}
+div.resortCountrySurround {
+	margin:0 0 0 10px;
+}
+div.resortCountryFlag {
+	float:left;
+}
+div.resortCountryName {
+	font-size:14px;
+	font-weight:bold;
+	color:#056CD3;
+	text-decoration:underline;
+	float:left;
+	margin-left:3px;
+}
+div.resortStatsIndexList {
+	float:left;
+	margin:5px 5px 5px 0;
+}
+p.resortStatsIndexListItem {
+	margin-top:5px;
+}
+a.resortListPricing {
+	background-color:#FF3048;
+	color:#FFF;
+	padding:6px 7px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	font-weight:bold;
+	font-size:13px;
+}
+a.resortListPricing:hover {
+	background-color:#c0142b;
+	text-decoration:none;
+}
+div.resortListPricingSurround {
+	float:left;
+	margin:21px 0 0 64px;
+}
+div.resortStatsIndexNote {
+	float:left;
+	margin-top:10px;
+	width:317px;
+}
+div.resortSummarySurround {
+	margin:10px 5px 5px 5px;
+}
+p.resortQuickSummaryHdr {
+	margin:0 0 5px 0;
+	font-weight:bold;
+	font-size:13px;
+	text-decoration:underline;
+}
+p.resortListLearnMore {
+	font-weight:bold;
+	margin:10px 0;
+}
+div.resortCountryMainSurround, div.videoContainer {
+	margin-top:20px;
+}
+div.resortVideoSurround {
+	margin:10px;
+}
+div.resortVideoContainerSub {
+	font-size:13px;
+	border:1px solid #E1E1E1;
+	background-color:#ECECEC;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:10px;
+	box-shadow: 5px 5px 10px #888888;
+	width:280px;
+	float:left;
+}
+ul.resortVideoList {
+	font-size:12px;
+	margin:0;
+	padding:0;
+}
+ul.resortVideoList li {
+	margin:15px 0 0 0;
+	padding:0;
+	font-weight:bold;
+	font-style:normal;
+	list-style:none;
+	color:#056CD3;
+}
+ul.resortVideoList li ul li{
+	font-style:italic;
+	margin:5px 0 0 0;
+	font-weight:normal;
+	list-style:none;
+	padding:0;
+}
+p.resortVideoSubTitle {
+	font-weight:bold;
+	text-decoration:underline;
+	margin-bottom:10px;
+}
+div.resortVideoNote {
+	font-size:11px;
+	margin-top:50px;
+}
+ul.resortOverviewList li:hover, ul.resortRestaurantList li:hover, ul.resortActivitiesList li:hover {
+	box-shadow:0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+ul.resortOverviewList, ul.resortRestaurantList, ul.resortActivitiesList {
+	margin:0 3px 20px 3px;
+	width:100%;
+	list-style:none outside none;
+	padding:0;
+}
+ul.resortOverviewList li, ul.resortRestaurantList li, ul.resortActivitiesList li {
+	background:none repeat scroll 0 0 #F1F1F1;
+	border:1px solid #E2E2E2;
+	cursor:pointer;
+	height:185px;
+	margin:20px 7px 0 7px;
+	padding:4px;
+	width:300px;
+	display:inline-block;
+	vertical-align:top;
+}
+ul.resortRestaurantList li {
+	height:200px !important;
+}
+ul.resortActivitiesList li {
+	height:172px !important;
+}
+ul.resortOverviewList li img, ul.resortRestaurantList li img, ul.resortActivitiesList li img {
+	line-height:0;
+	vertical-align:top;
+}
+span.topic {
+	color:#453C2D;
+	display:block;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:16px;
+	font-weight:400;
+	line-height:15px;
+	margin:14px 0 0;
+	text-align:center;
+	text-transform:uppercase;
+}
+span.photoSub {
+	color:#453C2D;
+	display:block;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:20px;
+	font-weight:700;
+	line-height:20px;
+	margin:6px 0 0;
+	letter-spacing:2px;
+	text-align:center;
+}
+span.photoSub span {
+	color:#797266;
+	display:block;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:14px;
+	font-weight:400;
+	line-height:14px;
+	letter-spacing:1px;
+	margin-top:3px;
+}
+ul.resortActivitiesList li span.photoSub span {
+	font-style:italic;
+	margin-top:4px;
+}
+ul.resortOverviewList a:hover, ul.resortRestaurantList a:hover, ul.resortActivitiesList a:hover {
+	text-decoration:none;
+}
+span.topic span {
+	color:#797266;
+	display:block;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:28px;
+	font-weight:700;
+	line-height:28px;
+}
+div.resortOverviewDetails, div.resortPageDetails {
+	display:none;
+	width:910px;
+	height:376px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+div.resortRestaurantDetails {
+	display:none;
+	width:910px;
+	height:466px;
+}
+div.resortOverviewDetails img, div.resortPageDetails img, div.resortRestaurantDetails img {
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+div.resortOverviewDetails div, div.resortRestaurantDetails div {
+	position:absolute;
+	left:15px;
+	top:15px;
+	max-width:500px;
+	padding:15px;
+	background-color:rgb(255,255,255);
+	background-color:rgba(255,255,255,0.9);
+}
+div.resortPageDetails div {
+	position:absolute;
+	left:15px;
+	top:15px;
+	padding:15px;
+	background-color:rgb(255,255,255);
+	background-color:rgba(255,255,255,0.9);
+}
+h1.resortChainName, h2.resortChainName {
+	padding-top:3px;
+	padding-bottom:3px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:22px;
+	color:#F00;
+	font-weight:bold;
+}
+p.resortSubtitle {
+	font-size:14px;
+	font-style:italic;
+	color:#333;
+}
+div#resortOverview p {
+	margin-bottom:10px;
+}
+div#resortFactsBox {
+	margin:5px 5px 5px 10px;
+	border:1px solid #999;
+	background-color:#F9F9F9;
+	padding:5px 6px;
+	float:right;
+	width:200px;
+}
+div#resortFactsBox ul {
+	margin:5px 0 0 0;
+	padding:0;
+	list-style:none;
+}
+div#resortFactsBox ul li {
+	margin-top:5px;
+}
+p#resortFactsHdr {
+	font-size:17px;
+	font-weight:bold;
+	font-style:italic;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+p.resortHighlightsHdr {
+	font-size:17px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-weight:bold;
+	margin-top:20px;
+	margin-bottom:7px !important;
+	color:#056CD3;
+}
+p.resortHighlightsSub {
+	font-size:13px;
+	font-style:italic;
+	margin-bottom:10px;
+}
+p.resortHighlight {
+	font-weight:bold;
+	font-size:13px;
+	margin-bottom:0 !important;
+}
+div#resort-map {
+	border:4px solid #F1F1F1;
+	width: 649px;
+	height: 400px;
+}
+ul#resortVideoList {
+	margin:20px 0 0 0;
+	padding:0;
+}
+ul#resortVideoList li {
+	list-style:none;
+	display:inline-block;
+	margin-left:5px;
+	font-weight:bold;
+}
+ul#resortVideoList li:first-child {
+	margin-left:0px;
+}
+ul#resortVideoList li a {
+	background-color:#FF3048;
+	color:#FFFFFF;
+	padding:5px 6px;
+	border:2px solid #C0142B;
+}
+ul#resortVideoList li a:hover {
+	text-decoration:none;
+	border:2px solid #C0142B;
+	background-color:#C0142B;
+}
+.resortMapLabel {
+   color: red;
+   background-color: white;
+   font-size: 11px;
+   font-weight: bold;
+   text-align: center;   
+   border: 1px solid #999;
+   padding:2px 3px;
+   white-space: nowrap;
+ }
+form#roomSelect input[type="radio"]:checked+label {
+	font-weight: bold;
+}    
+div#roomSelectSurround {
+	width:100%;
+	margin:20px 0 0 0;
+	text-align:center;
+}
+form#roomSelect input {
+	margin:0 1px 0 0;
+	padding:0;
+}
+form#roomSelect label {
+	margin-right:25px;
+	font-size:13px;
+	padding:0;
+}
+form#roomSelect label:last-child {
+	margin-right:0px;
+	padding:0;
+}
+div.resortRoomSurround {
+	border-top:1px solid #CCC;
+	padding:10px 0;
+}
+div.resortRoomImg {
+	float:right;
+	border:1px solid #CCC;
+	padding:3px;
+	margin:5px 5px 10px 5px;
+}
+div.resortRoomImg a {
+	display:block;
+}
+div.resortRoomName {
+	font-weight:bold;
+	font-size:14px;
+	color:#003369;
+}
+div.resortRoomView {
+	margin:5px 0;
+}
+div.resortRoomAmenitySurround {
+	margin:5px 0;
+}
+div.resortRoomAmenities, a.hidden, div.hidden {
+	display:none;
+}
+div.show{
+	display:block;
+}
+.clicked{
+	color:#000
+}
+div.resortRoomAmenities {
+	width:460px;
+	color:#033669;
+	font-size:12px
+}
+div.resortRoomAmenities h3 {
+	font-weight:bold;
+	text-decoration:underline;
+	font-size:14px;
+	margin-bottom:12px;
+}
+div.resortRoomAmenities ul {
+	margin:0;
+	padding:0;
+	columns:190px 2;
+	-webkit-columns:190px 2;
+	-moz-columns:190px 2;
+	list-style:none;
+}
+div.resortRoomAmenities ul li {
+	background-image:url("../images/side-nav/bullets.gif");
+	background-repeat:no-repeat;
+	background-position:0 50%;
+	padding-left:12px;
+	line-height:22px;
+}
+div.resortRoomLevelSummary {
+	background-color:#F9F9F9;
+	padding:5px 7px;
+	border:1px solid #CCC;
+	margin:20px 5px 10px 5px;
+	color:#555;
+}
+p.resortRooomLevelHdr {
+	font-size:13px;
+	font-weight:bold;
+	margin-bottom:2px;
+}
+p.resortRoomLevelDesc {
+	font-style:italic;
+}
+div.resortClubDetails {
+	display:none;
+}
+div.sandalsButlerSurround {
+	text-decoration:underline;
+	color:#056CD3;
+	font-size:30px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+div.clubSandalsSurround{
+	text-align:center;
+}
+div.clubSandalsSurround img {
+	margin-bottom:20px;
+	padding:5px 7px 7px 7px;
+	background-color:#F4F4F4;
+	border:1px solid #616161;
+}
+div.clubSandalsIntro {
+	margin-bottom:20px;
+}
+div.clubSandalsServicesHdr {
+	font-weight:bold;
+	font-size:16px;
+	text-decoration:underline;
+	margin-bottom:15px;
+}
+div.clubSandalsAmenityType {
+	font-style:italic;
+	margin:15px 0 5px 0;
+	color:#056CD3;
+	font-size:13px;
+}
+div.butlerServiceType {
+	font-style:italic;
+	margin:0 0 8px 0;
+	color:#056CD3;
+	font-weight:bold;
+	font-size:14px;
+}
+ul.clubSandalsAmenityList {
+	margin:0 0 0 0;
+	padding:0 0 0 15px;
+	font-size:13px;
+}
+ul.clubSandalsAmenityList li {
+	margin:5px 0;
+}
+div.clubSandalsTerms {
+	font-size:11px;
+	margin-top:20px;
+}
+div#butlerRooms {
+	background-color:#F3F3F3;
+	padding:10px 15px;
+	background-image:url(../images/land-travel/resorts/sandals/butler-background.jpg);
+	background-repeat:no-repeat;
+	background-size:contain;
+	border:1px solid #CCC;
+}
+div.butlerServiceSurround {
+	width:300px;
+	padding:9px 10px;
+	background: rgb(255, 255, 255); /* Fallback for older browsers w/o RGBA-support */
+    background: rgba(255, 255, 255, 0.7);
+	margin-bottom:15px;
+}
+ul#butlerServiceList {
+	list-style:none;
+	margin:0;
+	padding:0;
+	columns: 320px 2;
+	-moz-columns: 320px 2;
+	-webkit-columns: 320px 2;
+	display:inline-block;
+}
+ul#butlerServiceList li ul li {
+	margin:7px 0;
+	padding:0;
+	list-style:disc;
+}
+#activity-water ul, #activity-land ul, #activity-fitness-center ul, #activity-entertainment ul {
+	margin:15px 0 0 15px;
+	font-size:13px;
+	padding:0;
+	columns:180px 2;
+	-moz-columns:180px 2;
+	-webkit-columns:180px 2;
+}
+p.resortActivityDisc {
+	font-size:11px;
+	margin-top:20px;
+}
+div.resortListPricingBox {
+	display:none;
+        height: 100%;
+}
+
+
+div.resortListPricingBox iframe {
+	width:100%;
+	background-color:white;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+div.resortListPricingBox2 iframe {
+	width:100%;
+	height: 100%;
+	background-color:white;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	overflow: auto;
+}
+
+div.resortListPricingBox div {
+	font-size:22px;
+	text-align:center;
+	background-color:#FF3048;
+	color:white;
+	padding:5px 3px;
+	margin-bottom:10px;
+}
+.ui-datepicker {
+	font-size:12px !important;
+}
+.landSearchformTitle{
+	background-color:#033669 !important;
+	font-size:18px !important;
+	padding:5px 5px 10px !important;
+}
